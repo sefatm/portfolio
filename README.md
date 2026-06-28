@@ -1,2 +1,14 @@
-# portfolio
-Personal portfolio showcasing my Java backend applications, software engineering projects, and technical skills.
+# Sefat Mahmud Portfolio
+
+Static portfolio website generated from the provided CV and the public GitHub profile at `https://github.com/sefatm`.
+
+## Files
+
+- `index.html` - main portfolio page
+- `styles.css` - responsive design system
+- `script.js` - repository cards and header interaction
+- `Sefat_Mahmud_CV_IsDB.pdf` - portfolio CV
+
+## Deploy
+
+Upload these files to the `sefatm.github.io` repository root, then enable GitHub Pages from the repository settings if needed.
