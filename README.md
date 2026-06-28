@@ -11,4 +11,4 @@ Static portfolio website generated from the provided CV and the public GitHub pr
 
 ## Deploy
 
-Upload these files to the `sefatm.github.io` repository root, then enable GitHub Pages from the repository settings if needed.
+Upload these files to the `sefatm/portfolio` repository root, then enable GitHub Pages from the repository settings if needed.
