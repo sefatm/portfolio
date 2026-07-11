@@ -48,6 +48,7 @@ const header = document.querySelector("[data-header]");
 const chatWidget = document.querySelector("[data-chat-widget]");
 const chatToggle = document.querySelector("[data-chat-toggle]");
 const chatClose = document.querySelector("[data-chat-close]");
+const animatedHeadline = document.querySelector("[data-animated-headline]");
 
 repoGrid.innerHTML = repos
   .map(
@@ -89,3 +90,15 @@ document.addEventListener("keydown", (event) => {
     setChatOpen(false);
   }
 });
+
+if (animatedHeadline) {
+  const words = animatedHeadline.textContent.trim().split(/\s+/);
+  animatedHeadline.textContent = "";
+  words.forEach((word, index) => {
+    const span = document.createElement("span");
+    span.className = `headline-word${index === 1 ? " is-accent" : ""}`;
+    span.textContent = word;
+    span.style.animationDelay = `${index * 120}ms`;
+    animatedHeadline.appendChild(span);
+  });
+}
