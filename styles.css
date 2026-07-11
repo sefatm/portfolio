@@ -61,7 +61,8 @@ a {
 .nav,
 .actions,
 .profile-links,
-.contact-actions {
+.contact-actions,
+.timeline-meta {
   display: flex;
   align-items: center;
 }
@@ -338,7 +339,8 @@ a {
 
 .project-grid,
 .repo-grid,
-.skill-columns {
+.skill-columns,
+.cert-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
@@ -347,7 +349,8 @@ a {
 .project-card,
 .repo-card,
 .skill-block,
-.timeline article {
+.timeline article,
+.cert-grid article {
   border: 1px solid rgba(23, 32, 38, 0.09);
   border-radius: var(--radius);
   background: var(--white);
@@ -456,6 +459,78 @@ a {
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+.timeline-meta {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.timeline-meta span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--coal);
+  padding: 7px 11px;
+  text-transform: none;
+}
+
+.education-section {
+  padding-top: 32px;
+}
+
+.education-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 12px 34px rgba(23, 32, 38, 0.055);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1.6fr 0.55fr 0.75fr;
+  gap: 1px;
+  border-top: 1px solid var(--line);
+}
+
+.table-row:first-child {
+  border-top: 0;
+}
+
+.table-row span {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 14px 16px;
+  color: var(--muted);
+}
+
+.table-row span:first-child {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.table-head {
+  background: var(--coal);
+}
+
+.table-head span,
+.table-head span:first-child {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.certification-section {
+  padding-top: 32px;
+}
+
+.cert-grid article {
+  color: var(--coal);
+  font-weight: 750;
 }
 
 .contact-section {
@@ -621,8 +696,48 @@ a {
   .metrics,
   .project-grid,
   .repo-grid,
-  .skill-columns {
+  .skill-columns,
+  .cert-grid {
     grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row span {
+    min-height: auto;
+    padding: 10px 14px;
+  }
+
+  .table-row span::before {
+    display: inline-block;
+    min-width: 78px;
+    margin-right: 10px;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .table-row:not(.table-head) span:nth-child(1)::before {
+    content: "Degree";
+  }
+
+  .table-row:not(.table-head) span:nth-child(2)::before {
+    content: "Institute";
+  }
+
+  .table-row:not(.table-head) span:nth-child(3)::before {
+    content: "Year";
+  }
+
+  .table-row:not(.table-head) span:nth-child(4)::before {
+    content: "Result";
+  }
+
+  .table-head {
+    display: none;
   }
 
   .project-card.featured {
