@@ -98,7 +98,7 @@ if (animatedHeadline) {
     const span = document.createElement("span");
     span.className = `headline-word${index === 1 ? " is-accent" : ""}`;
     span.textContent = word;
-    span.style.animationDelay = `${index * 120}ms`;
+    span.style.animationDelay = `${index * 260}ms`;
     animatedHeadline.appendChild(span);
   });
 }

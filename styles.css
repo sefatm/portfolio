@@ -43,7 +43,7 @@ a {
   position: sticky;
   top: 14px;
   z-index: 20;
-  width: min(1180px, calc(100% - 28px));
+  width: min(1480px, calc(100% - 28px));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,7 +101,7 @@ a {
 }
 
 .section {
-  width: min(1120px, calc(100% - 36px));
+  width: min(1400px, calc(100% - 28px));
   margin: 0 auto;
   padding: 92px 0;
 }
@@ -110,10 +110,10 @@ a {
   position: relative;
   min-height: calc(100vh - 94px);
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(310px, 0.92fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
   align-items: center;
-  gap: clamp(32px, 6vw, 72px);
-  padding-top: 70px;
+  gap: clamp(28px, 4vw, 58px);
+  padding-top: 92px;
   padding-bottom: 72px;
 }
 
@@ -139,28 +139,28 @@ a {
 }
 
 .word-slider {
-  max-width: 830px;
+  max-width: 920px;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(40px, 6.2vw, 72px);
-  line-height: 1.02;
+  font-size: clamp(34px, 4.7vw, 62px);
+  line-height: 1.08;
   overflow: visible;
   text-wrap: balance;
 }
 
 .headline-word {
   display: inline-block;
-  margin-right: 0.16em;
+  margin-right: 0.12em;
   transform: translateY(18px);
   opacity: 0;
-  animation: wordIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: wordIn 950ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .headline-word.is-accent {
-  border-radius: 16px;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--teal), var(--blue));
   color: white;
-  padding: 0.02em 0.14em 0.08em;
+  padding: 0.01em 0.11em 0.06em;
   box-shadow: 0 18px 42px rgba(15, 159, 147, 0.18);
 }
 
@@ -172,7 +172,7 @@ a {
 }
 
 .lead {
-  max-width: 680px;
+  max-width: 780px;
   margin: 26px 0 0;
   color: var(--muted);
   font-size: 18px;
@@ -250,7 +250,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  max-width: 760px;
+  max-width: 880px;
   margin-top: 34px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -375,7 +375,7 @@ a {
 }
 
 .metrics {
-  width: min(1120px, calc(100% - 36px));
+  width: min(1400px, calc(100% - 28px));
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
@@ -625,7 +625,7 @@ a {
 
 .contact-section {
   display: grid;
-  width: min(1120px, calc(100% - 36px));
+  width: min(1400px, calc(100% - 28px));
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 28px;
@@ -784,7 +784,7 @@ a {
 
   .hero {
     min-height: auto;
-    padding-top: 48px;
+    padding-top: 72px;
   }
 
   .hero::before {
@@ -799,6 +799,11 @@ a {
   .skill-columns,
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+
+  .word-slider {
+    max-width: 100%;
+    font-size: clamp(34px, 8.5vw, 52px);
   }
 
   .project-card.featured {
@@ -860,7 +865,12 @@ a {
   }
 
   .word-slider {
-    font-size: 37px;
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .headline-word.is-accent {
+    border-radius: 10px;
   }
 
   .lead {
