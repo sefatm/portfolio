@@ -101,9 +101,9 @@ a {
 }
 
 .section {
-  width: min(1400px, calc(100% - 28px));
+  width: min(1360px, calc(100% - 56px));
   margin: 0 auto;
-  padding: 92px 0;
+  padding: 46px 0;
 }
 
 .hero {
@@ -377,7 +377,7 @@ a {
 }
 
 .metrics {
-  width: min(1400px, calc(100% - 28px));
+  width: min(1360px, calc(100% - 56px));
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
@@ -419,7 +419,7 @@ a {
 
 .section-heading {
   max-width: 710px;
-  margin-bottom: 34px;
+  margin-bottom: 24px;
 }
 
 .section-heading h2,
@@ -527,7 +527,18 @@ a {
 .repo-section,
 .education-section,
 .certification-section {
-  padding-top: 32px;
+  padding-top: 24px;
+}
+
+.repo-section {
+  padding-bottom: 28px;
+}
+
+.split-section,
+.timeline-section,
+.education-section,
+.certification-section {
+  padding-top: 36px;
 }
 
 .repo-card {
@@ -627,7 +638,7 @@ a {
 
 .contact-section {
   display: grid;
-  width: min(1400px, calc(100% - 28px));
+  width: min(1360px, calc(100% - 56px));
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 28px;
@@ -784,6 +795,16 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .section {
+    width: min(100% - 34px, 1120px);
+    padding: 38px 0;
+  }
+
+  .metrics,
+  .contact-section {
+    width: min(100% - 34px, 1120px);
+  }
+
   .hero {
     min-height: auto;
     padding-top: 72px;
@@ -864,8 +885,8 @@ a {
 
 @media (max-width: 520px) {
   .section {
-    width: min(100% - 20px, 1120px);
-    padding: 62px 0;
+    width: min(100% - 24px, 1120px);
+    padding: 34px 0;
   }
 
   .hero {
@@ -893,7 +914,7 @@ a {
   }
 
   .contact-section {
-    width: min(100% - 28px, 1120px);
+    width: min(100% - 24px, 1120px);
     padding: 28px 18px;
   }
 
