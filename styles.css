@@ -145,25 +145,30 @@ a {
   margin: 0;
   color: var(--ink);
   font-size: clamp(34px, 4.7vw, 62px);
-  line-height: 1.08;
+  line-height: 1.16;
   overflow: visible;
+  padding-bottom: 0.08em;
   text-wrap: balance;
 }
 
 .headline-word {
   display: inline-block;
   margin-right: 0.12em;
-  transform: translateY(18px);
+  transform: translateY(10px);
   opacity: 0;
   animation: wordIn 950ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  vertical-align: baseline;
 }
 
 .headline-word.is-accent {
+  line-height: 1.02;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--teal), var(--blue));
   color: white;
-  padding: 0.01em 0.11em 0.06em;
+  padding: 0.07em 0.13em 0.1em;
   box-shadow: 0 18px 42px rgba(15, 159, 147, 0.18);
+  transform: translateY(6px);
+  vertical-align: 0.02em;
 }
 
 @keyframes wordIn {
