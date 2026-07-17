@@ -541,14 +541,23 @@ a {
 
 .project-showcase {
   display: grid;
-  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(20px, 3vw, 34px);
-  align-items: center;
-  padding: clamp(20px, 3vw, 30px);
+  min-height: clamp(560px, 78vh, 820px);
+  grid-template-columns: minmax(310px, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(22px, 3.2vw, 42px);
+  align-items: stretch;
+  padding: clamp(22px, 3vw, 34px);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 252, 0.94)),
+    white;
 }
 
 .project-content {
+  display: flex;
+  min-height: 100%;
   min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(4px, 1vw, 12px);
 }
 
 .project-index {
@@ -567,8 +576,13 @@ a {
 .project-content h3 {
   margin: 16px 0 12px;
   color: var(--ink);
-  font-size: clamp(24px, 2.6vw, 34px);
+  font-size: clamp(28px, 3vw, 46px);
   line-height: 1.06;
+}
+
+.project-content p {
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.7;
 }
 
 .project-points {
@@ -598,8 +612,10 @@ a {
 
 .project-shots {
   display: grid;
+  height: 100%;
   gap: 12px;
   min-width: 0;
+  align-items: center;
 }
 
 .web-shots {
@@ -612,19 +628,24 @@ a {
 }
 
 .single-phone {
-  grid-template-columns: minmax(180px, 320px);
-  justify-content: end;
+  grid-template-columns: minmax(220px, 440px);
+  justify-content: center;
 }
 
 .shot {
   position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 420px;
   min-width: 0;
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(223, 232, 238, 0.95);
-  border-radius: 12px;
-  background: #f7fbfc;
-  box-shadow: 0 16px 42px rgba(20, 33, 43, 0.1);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(15, 159, 147, 0.08), transparent 18rem),
+    #f7fbfc;
+  box-shadow: 0 22px 64px rgba(20, 33, 43, 0.13);
 }
 
 .shot-wide {
@@ -634,14 +655,17 @@ a {
 .shot img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top center;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .phone-shot img {
-  aspect-ratio: 9 / 16;
-  max-height: 460px;
+  width: auto;
+  max-width: 100%;
+  max-height: min(690px, 74vh);
+  margin: auto;
+  object-fit: contain;
 }
 
 .shot figcaption {
@@ -966,7 +990,16 @@ a {
   }
 
   .project-showcase {
+    min-height: auto;
     grid-template-columns: 1fr;
+  }
+
+  .project-content {
+    justify-content: flex-start;
+  }
+
+  .shot {
+    min-height: 320px;
   }
 
   .single-phone {
@@ -1069,7 +1102,8 @@ a {
   }
 
   .phone-shot img {
-    aspect-ratio: 10 / 14;
+    width: 100%;
+    max-height: 560px;
   }
 
   .lead {
