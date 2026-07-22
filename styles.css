@@ -935,6 +935,292 @@ a {
   text-align: center;
 }
 
+/* Modern portfolio refresh */
+body {
+  background:
+    linear-gradient(90deg, rgba(15, 159, 147, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 8% 4%, rgba(15, 159, 147, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 12%, rgba(37, 99, 235, 0.14), transparent 34rem),
+    radial-gradient(circle at 74% 92%, rgba(214, 150, 36, 0.1), transparent 28rem),
+    linear-gradient(180deg, #fbfdfe 0%, #f4f8fa 48%, #edf5f6 100%);
+  background-size: 56px 56px, 56px 56px, auto, auto, auto, auto;
+}
+
+.site-header {
+  top: 18px;
+  padding: 10px 12px;
+  border-color: rgba(185, 213, 220, 0.72);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 70px rgba(20, 33, 43, 0.1);
+}
+
+.brand-mark {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35), 0 10px 28px rgba(15, 159, 147, 0.26);
+}
+
+.nav a {
+  border-radius: 999px;
+  padding: 9px 12px;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav a:hover {
+  background: rgba(15, 159, 147, 0.08);
+}
+
+.section {
+  padding: 58px 0;
+}
+
+.hero {
+  min-height: calc(100vh - 82px);
+  padding-top: 102px;
+  padding-bottom: 86px;
+}
+
+.hero::before {
+  inset: 34px 0 38px;
+  border-color: rgba(185, 213, 220, 0.7);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 249, 249, 0.88)),
+    radial-gradient(circle at 85% 16%, rgba(37, 99, 235, 0.1), transparent 18rem),
+    var(--card);
+  box-shadow: 0 30px 100px rgba(20, 33, 43, 0.12);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0b9488;
+  letter-spacing: 0;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  box-shadow: 0 0 0 5px rgba(15, 159, 147, 0.1);
+}
+
+.word-slider {
+  max-width: 980px;
+  font-size: clamp(38px, 4.7vw, 72px);
+  line-height: 1.14;
+}
+
+.headline-word.is-accent {
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0f9f93 0%, #1677d2 62%, #2563eb 100%);
+  box-shadow: 0 22px 52px rgba(37, 99, 235, 0.18);
+}
+
+.lead {
+  color: #526474;
+  font-size: clamp(17px, 1.32vw, 20px);
+  line-height: 1.75;
+}
+
+.hero-proof span,
+.hero-badges span,
+.tag,
+.repo-meta span,
+.timeline-meta span,
+.profile-links a {
+  border-color: rgba(195, 216, 222, 0.9);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 8px 22px rgba(20, 33, 43, 0.04);
+}
+
+.button {
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(20, 33, 43, 0.06);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, #0f9f93, #18b8aa);
+  box-shadow: 0 16px 34px rgba(15, 159, 147, 0.24);
+}
+
+.hero-strip {
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(20, 33, 43, 0.08);
+}
+
+.hero-profile {
+  border-radius: 28px;
+  border-color: rgba(185, 213, 220, 0.78);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 32px 90px rgba(20, 33, 43, 0.15);
+}
+
+.hero-profile::before {
+  height: 154px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.28), transparent 7rem),
+    linear-gradient(135deg, rgba(15, 159, 147, 0.96), rgba(37, 99, 235, 0.74));
+}
+
+.avatar {
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(20, 33, 43, 0.2);
+}
+
+.profile-signal {
+  border-color: rgba(195, 216, 222, 0.84);
+  background: linear-gradient(135deg, #ffffff, #f1f8f8);
+}
+
+.metrics {
+  margin-top: -30px;
+}
+
+.metrics div,
+.repo-card,
+.skill-block,
+.timeline article,
+.cert-grid article,
+.education-table {
+  border-color: rgba(195, 216, 222, 0.78);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 22px 70px rgba(20, 33, 43, 0.08);
+}
+
+.metrics div {
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics div::after {
+  content: "";
+  position: absolute;
+  inset: auto -24px -36px auto;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(15, 159, 147, 0.08);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2,
+.contact-section h2 {
+  font-size: clamp(34px, 4.2vw, 56px);
+  letter-spacing: 0;
+}
+
+.showcase-grid {
+  gap: 32px;
+}
+
+.project-showcase {
+  min-height: clamp(560px, 78vh, 820px);
+  border: 1px solid rgba(195, 216, 222, 0.78);
+  border-radius: 26px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(246, 252, 252, 0.9)),
+    white;
+  box-shadow: 0 30px 90px rgba(20, 33, 43, 0.11);
+}
+
+.project-showcase::before {
+  height: 5px;
+  background: linear-gradient(90deg, #0f9f93, #2563eb 52%, #d69624);
+}
+
+.project-index {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(15, 159, 147, 0.14), rgba(37, 99, 235, 0.1)),
+    white;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72), 0 16px 38px rgba(20, 33, 43, 0.08);
+}
+
+.project-content h3 {
+  max-width: 680px;
+  font-size: clamp(32px, 3.2vw, 54px);
+}
+
+.project-content p {
+  max-width: 720px;
+  color: #4d5f70;
+}
+
+.project-shots {
+  border-radius: 22px;
+}
+
+.shot {
+  min-height: 440px;
+  border-radius: 22px;
+  border-color: rgba(185, 213, 220, 0.78);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(236, 247, 247, 0.9)),
+    #f7fbfc;
+  box-shadow: 0 26px 74px rgba(20, 33, 43, 0.13);
+}
+
+.shot img {
+  padding: 18px;
+}
+
+.phone-shot {
+  background:
+    linear-gradient(135deg, #ffffff, #edf7f7),
+    #f7fbfc;
+}
+
+.phone-shot img {
+  padding: 12px;
+  filter: drop-shadow(0 24px 34px rgba(20, 33, 43, 0.16));
+}
+
+.shot figcaption {
+  left: 18px;
+  bottom: 18px;
+  background: rgba(20, 33, 43, 0.84);
+  box-shadow: 0 10px 28px rgba(20, 33, 43, 0.16);
+}
+
+.skill-block,
+.repo-card,
+.timeline article,
+.cert-grid article {
+  padding: 28px;
+}
+
+.skill-block h3,
+.timeline h3 {
+  font-size: 24px;
+}
+
+.table-head {
+  background: linear-gradient(90deg, #0f9f93, #2563eb);
+}
+
+.contact-section {
+  border-radius: 28px;
+  border-color: rgba(185, 213, 220, 0.78);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(214, 150, 36, 0.12), transparent 22rem),
+    linear-gradient(135deg, #ffffff, #eef8f7);
+  box-shadow: 0 30px 90px rgba(20, 33, 43, 0.11);
+}
+
+.chat-toggle {
+  box-shadow: 0 20px 46px rgba(37, 99, 235, 0.28);
+}
+
 @media (max-width: 860px) {
   :root {
     --page-gutter: 34px;
