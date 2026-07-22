@@ -1868,3 +1868,112 @@ body {
     padding-right: 22px;
   }
 }
+
+/* Final hero rhythm and theme switcher polish. */
+.theme-toggle {
+  display: inline-grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(185, 213, 220, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(20, 33, 43, 0.08);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 159, 147, 0.42);
+}
+
+.word-slider {
+  line-height: 1.24;
+}
+
+.headline-word {
+  animation-duration: 1350ms;
+}
+
+.headline-word:first-child {
+  padding-bottom: 0.18em;
+  margin-bottom: 0.04em;
+}
+
+.headline-word.is-accent {
+  transform: translateY(0);
+  padding: 0.095em 0.14em 0.17em;
+}
+
+html[data-theme="dark"] {
+  --ink: #f3f7fb;
+  --muted: #b5c5d2;
+  --soft: #07131c;
+  --line: #203748;
+  --teal: #2dd4bf;
+  --blue: #60a5fa;
+  --gold: #f6c768;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background:
+    linear-gradient(rgba(45, 212, 191, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 84% 14%, rgba(96, 165, 250, 0.2), transparent 28rem),
+    #07131c;
+  background-size: 65px 65px, 65px 65px, auto, auto;
+}
+
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .hero,
+html[data-theme="dark"] .project-showcase,
+html[data-theme="dark"] .repo-card,
+html[data-theme="dark"] .skill-block,
+html[data-theme="dark"] .timeline article,
+html[data-theme="dark"] .cert-grid article,
+html[data-theme="dark"] .contact-section,
+html[data-theme="dark"] .metrics div {
+  border-color: rgba(96, 165, 250, 0.22);
+  background:
+    linear-gradient(135deg, rgba(15, 28, 39, 0.95), rgba(9, 23, 32, 0.9));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+}
+
+html[data-theme="dark"] .hero-profile {
+  background: rgba(10, 23, 32, 0.94);
+}
+
+html[data-theme="dark"] .shot {
+  border-color: rgba(96, 165, 250, 0.24);
+  background: #0b1c27;
+}
+
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .hero-proof span,
+html[data-theme="dark"] .hero-badges span,
+html[data-theme="dark"] .button.secondary,
+html[data-theme="dark"] .button.ghost,
+html[data-theme="dark"] .theme-toggle {
+  border-color: rgba(96, 165, 250, 0.26);
+  background: rgba(10, 24, 34, 0.88);
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .brand-mark,
+html[data-theme="dark"] .button.primary,
+html[data-theme="dark"] .chat-toggle {
+  box-shadow: 0 16px 36px rgba(45, 212, 191, 0.16);
+}
+
+@media (max-width: 860px) {
+  .theme-toggle {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+  }
+}

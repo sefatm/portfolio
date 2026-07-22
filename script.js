@@ -49,6 +49,8 @@ const chatWidget = document.querySelector("[data-chat-widget]");
 const chatToggle = document.querySelector("[data-chat-toggle]");
 const chatClose = document.querySelector("[data-chat-close]");
 const animatedHeadline = document.querySelector("[data-animated-headline]");
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const themeIcon = document.querySelector("[data-theme-icon]");
 
 repoGrid.innerHTML = repos
   .map(
@@ -91,6 +93,21 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+  themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  localStorage.setItem("portfolioTheme", theme);
+};
+
+const savedTheme = localStorage.getItem("portfolioTheme") || "light";
+applyTheme(savedTheme);
+
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(nextTheme);
+});
+
 if (animatedHeadline) {
   const words = animatedHeadline.textContent.trim().split(/\s+/);
   animatedHeadline.textContent = "";
@@ -98,7 +115,7 @@ if (animatedHeadline) {
     const span = document.createElement("span");
     span.className = `headline-word${index === 1 ? " is-accent" : ""}`;
     span.textContent = word;
-    span.style.animationDelay = `${index * 260}ms`;
+    span.style.animationDelay = `${index * 430}ms`;
     animatedHeadline.appendChild(span);
   });
 }
