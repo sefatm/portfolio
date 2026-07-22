@@ -1828,3 +1828,43 @@ body {
     line-height: 1.2;
   }
 }
+
+/* Keep large cards away from both viewport edges and add clear inner breathing room. */
+.site-header,
+.section,
+.metrics,
+.contact-section {
+  width: min(1280px, calc(100% - 96px));
+}
+
+.hero,
+.contact-section,
+.project-showcase {
+  padding-left: clamp(42px, 4vw, 70px);
+  padding-right: clamp(42px, 4vw, 70px);
+}
+
+@media (max-width: 980px) {
+  .site-header,
+  .section,
+  .metrics,
+  .contact-section {
+    width: min(100% - 48px, 1280px);
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .section,
+  .metrics,
+  .contact-section {
+    width: min(100% - 28px, 1280px);
+  }
+
+  .hero,
+  .contact-section,
+  .project-showcase {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
