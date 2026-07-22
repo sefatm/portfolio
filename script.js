@@ -1,45 +1,45 @@
 const repos = [
   {
-    name: "Spring1",
-    url: "https://github.com/sefatm/Spring1",
-    language: "Java",
-    updated: "2026-04-27",
-    summary: "Recent Java/Spring practice repository from the public GitHub profile."
+    name: "portfolio",
+    url: "https://github.com/sefatm/portfolio",
+    language: "HTML/CSS/JS",
+    updated: "2026-07-23",
+    summary: "Personal portfolio with CV content, project case studies, screenshots, contact links, and GitHub Pages publishing."
   },
   {
-    name: "jsp",
-    url: "https://github.com/sefatm/jsp",
-    language: "Java",
-    updated: "2026-03-04",
-    summary: "Java web practice repository focused on JSP fundamentals."
+    name: "Event-Management_web",
+    url: "https://github.com/sefatm/Event-Management_web",
+    language: "Angular",
+    updated: "2026-07-23",
+    summary: "Smart event management web platform with admin dashboard, event operations, booking analytics, and role-based modules."
   },
   {
-    name: "Hospital-Management",
-    url: "https://github.com/sefatm/Hospital-Management",
-    language: "Project",
-    updated: "2026-02-24",
-    summary: "Management-system repository aligned with CRUD and admin workflow experience."
+    name: "E-commerce_Flutter",
+    url: "https://github.com/sefatm/E-commerce_Flutter",
+    language: "Dart",
+    updated: "2026-07-23",
+    summary: "Flutter e-commerce mobile application with product catalog, cart-oriented shopping screens, and responsive Material UI."
   },
   {
-    name: "ProductManagement",
-    url: "https://github.com/sefatm/ProductManagement",
-    language: "Java",
-    updated: "2026-02-07",
-    summary: "Product management application practice with Java backend concepts."
+    name: "E-Governance Management System",
+    url: "https://github.com/sefatm",
+    language: "Angular + Spring Boot",
+    updated: "CV project",
+    summary: "Bilingual municipal service portal covering citizen services, e-voting, e-tender, holding tax, social cards, GIS, and admin workflows."
   },
   {
-    name: "swing_jdbc_id",
-    url: "https://github.com/sefatm/swing_jdbc_id",
-    language: "Java",
-    updated: "2026-01-22",
-    summary: "Desktop Java Swing and JDBC practice repository."
+    name: "Android Citizen Service App",
+    url: "https://github.com/sefatm",
+    language: "Android Java",
+    updated: "CV project",
+    summary: "Native Android citizen service app consuming Spring Boot REST APIs with authentication, Firebase notifications, and real-time data sync."
   },
   {
-    name: "sefatm.github.io",
-    url: "https://github.com/sefatm/sefatm.github.io",
-    language: "HTML",
-    updated: "2025-11-02",
-    summary: "GitHub Pages repository for publishing a personal portfolio."
+    name: "Android E-Commerce App",
+    url: "https://github.com/sefatm",
+    language: "Android Java",
+    updated: "CV project",
+    summary: "Native Android commerce app for product browsing, user authentication, order tracking, push notifications, and backend synchronization."
   }
 ];
 
@@ -56,7 +56,7 @@ repoGrid.innerHTML = repos
       <article class="repo-card">
         <div class="repo-meta">
           <span>${repo.language}</span>
-          <span>Updated ${repo.updated}</span>
+          <span>${repo.updated}</span>
         </div>
         <h3><a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a></h3>
         <p>${repo.summary}</p>
