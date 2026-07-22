@@ -95,7 +95,10 @@ document.addEventListener("keydown", (event) => {
 
 const applyTheme = (theme) => {
   document.documentElement.dataset.theme = theme;
+  document.body.dataset.theme = theme;
+  themeIcon.innerHTML = theme === "dark" ? "&#9728;" : "&#9790;";
   themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+  themeIcon.innerHTML = theme === "dark" ? "&#9728;" : "&#9790;";
   themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
   localStorage.setItem("portfolioTheme", theme);
 };

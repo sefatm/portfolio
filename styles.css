@@ -1906,6 +1906,10 @@ body {
 
 .headline-word.is-accent {
   transform: translateY(0);
+  max-width: 100%;
+  white-space: nowrap;
+  word-break: keep-all;
+  font-size: 0.9em;
   padding: 0.095em 0.14em 0.17em;
 }
 
@@ -1917,6 +1921,7 @@ html[data-theme="dark"] {
   --teal: #2dd4bf;
   --blue: #60a5fa;
   --gold: #f6c768;
+  background: #07131c;
   color-scheme: dark;
 }
 
@@ -1927,6 +1932,22 @@ html[data-theme="dark"] body {
     radial-gradient(circle at 84% 14%, rgba(96, 165, 250, 0.2), transparent 28rem),
     #07131c;
   background-size: 65px 65px, 65px 65px, auto, auto;
+}
+
+html[data-theme="dark"] .word-slider,
+html[data-theme="dark"] .brand,
+html[data-theme="dark"] .nav a,
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] .project-content h3,
+html[data-theme="dark"] .contact-section h2 {
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .lead,
+html[data-theme="dark"] .project-content p,
+html[data-theme="dark"] .section-heading p,
+html[data-theme="dark"] .footer {
+  color: var(--muted);
 }
 
 html[data-theme="dark"] .site-header,
