@@ -2,44 +2,65 @@ const repos = [
   {
     name: "portfolio",
     url: "https://github.com/sefatm/portfolio",
-    language: "HTML/CSS/JS",
+    language: "CSS",
     updated: "2026-07-23",
-    summary: "Personal portfolio with CV content, project case studies, screenshots, contact links, and GitHub Pages publishing."
+    summary: "Personal portfolio showcasing CV content, project case studies, screenshots, contact links, and GitHub Pages publishing."
+  },
+  {
+    name: "E-commerce_Web",
+    url: "https://github.com/sefatm/E-commerce_Web",
+    language: "CSS",
+    updated: "2026-07-22",
+    summary: "E-commerce web application repository for marketplace catalogue, shopping workflow, and frontend/backend implementation."
   },
   {
     name: "Event-Management_web",
     url: "https://github.com/sefatm/Event-Management_web",
-    language: "Angular",
-    updated: "2026-07-23",
+    language: "TypeScript",
+    updated: "2026-07-22",
     summary: "Smart event management web platform with admin dashboard, event operations, booking analytics, and role-based modules."
+  },
+  {
+    name: "E-Governance_Web",
+    url: "https://github.com/sefatm/E-Governance_Web",
+    language: "Java",
+    updated: "2026-07-22",
+    summary: "E-Governance web repository for municipal services, admin workflow, citizen modules, and Spring Boot based implementation."
+  },
+  {
+    name: "Event-Management_Andriod",
+    url: "https://github.com/sefatm/Event-Management_Andriod",
+    language: "Android Java",
+    updated: "2026-07-22",
+    summary: "Android event management repository for participant app workflows, event browsing, bookings, tickets, and mobile UI."
   },
   {
     name: "E-commerce_Flutter",
     url: "https://github.com/sefatm/E-commerce_Flutter",
+    language: "Java",
+    updated: "2026-07-22",
+    summary: "Flutter e-commerce mobile application repository with product catalogue and cart-oriented shopping screens."
+  },
+  {
+    name: "E-commerce_Andriod",
+    url: "https://github.com/sefatm/E-commerce_Andriod",
+    language: "Android Java",
+    updated: "2026-07-22",
+    summary: "Android e-commerce repository for product browsing, authentication, order tracking, and mobile commerce workflows."
+  },
+  {
+    name: "E-Governance_Flutter",
+    url: "https://github.com/sefatm/E-Governance_Flutter",
     language: "Dart",
-    updated: "2026-07-23",
-    summary: "Flutter e-commerce mobile application with product catalog, cart-oriented shopping screens, and responsive Material UI."
+    updated: "2026-07-22",
+    summary: "Flutter E-Governance repository for citizen service mobile screens and cross-platform government service access."
   },
   {
-    name: "E-Governance Management System",
-    url: "https://github.com/sefatm",
-    language: "Angular + Spring Boot",
-    updated: "CV project",
-    summary: "Bilingual municipal service portal covering citizen services, e-voting, e-tender, holding tax, social cards, GIS, and admin workflows."
-  },
-  {
-    name: "Android Citizen Service App",
-    url: "https://github.com/sefatm",
+    name: "E-Governance_Andriod",
+    url: "https://github.com/sefatm/E-Governance_Andriod",
     language: "Android Java",
-    updated: "CV project",
-    summary: "Native Android citizen service app consuming Spring Boot REST APIs with authentication, Firebase notifications, and real-time data sync."
-  },
-  {
-    name: "Android E-Commerce App",
-    url: "https://github.com/sefatm",
-    language: "Android Java",
-    updated: "CV project",
-    summary: "Native Android commerce app for product browsing, user authentication, order tracking, push notifications, and backend synchronization."
+    updated: "2026-07-22",
+    summary: "Android E-Governance repository for citizen services, e-voting, e-tender, family cards, and service modules."
   }
 ];
 
