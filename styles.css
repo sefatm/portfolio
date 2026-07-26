@@ -689,44 +689,63 @@ a {
 
 .municipality-slider {
   isolation: isolate;
+  overflow: hidden;
+  padding: 24px 18px 18px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(232, 247, 246, 0.78)),
-    #f7fbfc;
+    linear-gradient(180deg, rgba(13, 29, 38, 0.98) 0 22px, transparent 22px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 249, 245, 0.82) 62%, rgba(244, 248, 255, 0.9));
+  border-color: rgba(2, 107, 89, 0.2);
+  box-shadow:
+    0 24px 60px rgba(14, 39, 48, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 .municipality-slider::before {
-  content: "";
+  content: " ";
   position: absolute;
-  inset: 12px;
-  z-index: 0;
-  border-radius: 18px;
-  border: 1px solid rgba(15, 159, 147, 0.14);
+  top: 8px;
+  left: 14px;
+  z-index: 3;
+  width: 42px;
+  height: 6px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 3px 3px, #ff7068 0 3px, transparent 3.5px),
+    radial-gradient(circle at 21px 3px, #f4c95d 0 3px, transparent 3.5px),
+    radial-gradient(circle at 39px 3px, #3ad08e 0 3px, transparent 3.5px);
   pointer-events: none;
 }
 
 .municipality-slider::after {
   content: "";
   position: absolute;
-  inset: auto 24px 24px;
+  inset: 28px 18px 18px;
   z-index: 0;
-  height: 34%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(15, 159, 147, 0.18), transparent 68%);
-  filter: blur(18px);
+  border-radius: 18px;
+  border: 1px solid rgba(7, 93, 72, 0.12);
+  background:
+    linear-gradient(90deg, rgba(12, 126, 99, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(12, 126, 99, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.55;
   pointer-events: none;
 }
 
 .municipality-slider img {
   position: relative;
   z-index: 1;
+  height: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(9, 62, 53, 0.12);
+  box-shadow: 0 16px 32px rgba(12, 47, 53, 0.16);
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   filter: saturate(1.02) contrast(1.01);
   transition:
-    opacity 520ms ease,
-    transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    filter 760ms ease,
-    clip-path 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 680ms ease,
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 860ms ease,
+    clip-path 860ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform, filter, clip-path;
 }
 
@@ -734,7 +753,16 @@ a {
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: min(360px, calc(100% - 20px));
+  border-color: rgba(255, 255, 255, 0.36);
+  background: rgba(9, 23, 31, 0.82);
+  box-shadow: 0 12px 28px rgba(9, 23, 31, 0.18);
+  transform: translateY(0);
+  transition:
+    opacity 520ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .municipality-slider .slide-counter {
@@ -746,30 +774,52 @@ a {
   opacity: 0;
 }
 
-.municipality-slider.slide-zoom.is-changing img {
-  transform: scale(1.055);
+.municipality-slider.is-changing figcaption {
+  opacity: 0;
+  transform: translateY(12px);
 }
 
-.municipality-slider.slide-rise.is-changing img {
-  transform: translateY(24px) scale(0.985);
+.municipality-slider.slide-fade.is-changing img {
+  transform: scale(0.985);
+}
+
+.municipality-slider.slide-zoom.is-changing img {
+  transform: scale(1.07);
+}
+
+.municipality-slider.slide-lift.is-changing img {
+  transform: translateY(26px) scale(0.975);
+}
+
+.municipality-slider.slide-sweep.is-changing img {
+  transform: translateX(-34px) scale(1.02);
+  filter: saturate(1.08) contrast(1.04);
 }
 
 .municipality-slider.slide-tilt.is-changing img {
-  transform: rotateX(7deg) rotateY(-7deg) scale(0.98);
+  transform: rotateX(8deg) rotateY(-8deg) scale(0.975);
 }
 
-.municipality-slider.slide-pan.is-changing img {
-  transform: translateX(-28px) scale(1.015);
+.municipality-slider.slide-focus.is-changing img {
+  filter: blur(8px) saturate(1.18);
+  transform: scale(1.035);
 }
 
-.municipality-slider.slide-soft.is-changing img {
-  filter: blur(10px) saturate(1.25);
-  transform: scale(1.025);
+.municipality-slider.slide-curtain.is-changing img {
+  clip-path: inset(0 58% 0 0 round 14px);
+  transform: scale(1.018);
 }
 
-.municipality-slider.slide-reveal.is-changing img {
-  clip-path: inset(0 52% 0 0 round 14px);
-  transform: scale(1.02);
+.municipality-slider.slide-drift.is-changing img {
+  transform: translate3d(28px, -16px, 0) scale(0.99);
+  filter: saturate(0.95) contrast(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .municipality-slider img,
+  .municipality-slider figcaption {
+    transition: none;
+  }
 }
 
 .repo-section,

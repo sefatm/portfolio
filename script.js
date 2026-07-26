@@ -145,7 +145,8 @@ if (animatedHeadline) {
 }
 
 const municipalityScreens = [
-  { src: "./assets/Municipality/Screenshot (729).png?v=20260726", caption: "Dashboard overview" },
+  { src: "./assets/Municipality/Screenshot (728).png?v=20260726", caption: "Dashboard overview" },
+  { src: "./assets/Municipality/Screenshot (729).png?v=20260726", caption: "Service control panel" },
   { src: "./assets/Municipality/Screenshot (730).png?v=20260726", caption: "Citizen service module" },
   { src: "./assets/Municipality/Screenshot (731).png?v=20260726", caption: "Application workflow" },
   { src: "./assets/Municipality/Screenshot (732).png?v=20260726", caption: "Trade license service" },
@@ -166,7 +167,6 @@ const municipalityScreens = [
   { src: "./assets/Municipality/Screenshot (761).png?v=20260726", caption: "Water billing" },
   { src: "./assets/Municipality/Screenshot (762).png?v=20260726", caption: "Waste schedule" },
   { src: "./assets/Municipality/Screenshot (763).png?v=20260726", caption: "Pickup request" },
-  { src: "./assets/Municipality/Screenshot (764).png?v=20260726", caption: "Ward management" },
   { src: "./assets/Municipality/Screenshot (765).png?v=20260726", caption: "GIS ward map" },
   { src: "./assets/Municipality/Screenshot (766).png?v=20260726", caption: "Holding location map" },
   { src: "./assets/Municipality/Screenshot (767).png?v=20260726", caption: "E-tender notices" },
@@ -180,39 +180,64 @@ const municipalityScreens = [
   { src: "./assets/Municipality/Screenshot (776).png?v=20260726", caption: "Social card admin" },
   { src: "./assets/Municipality/Screenshot (777).png?v=20260726", caption: "Notice management" },
   { src: "./assets/Municipality/Screenshot (778).png?v=20260726", caption: "Notification center" },
-  { src: "./assets/Municipality/Screenshot (779).png?v=20260726", caption: "Reports and analytics" },
-  { src: "./assets/Municipality/Screenshot (780).png?v=20260726", caption: "System settings" }
+  { src: "./assets/Municipality/Screenshot (783).png?v=20260726", caption: "Reports and analytics" },
+  { src: "./assets/Municipality/Screenshot (784).png?v=20260726", caption: "System settings" }
 ];
 
 const municipalitySlider = document.querySelector("[data-municipality-slider]");
 const municipalityImage = document.querySelector("[data-municipality-image]");
 const municipalityCaption = document.querySelector("[data-municipality-caption]");
 const municipalityCounter = document.querySelector("[data-municipality-counter]");
-const municipalityStyles = ["slide-zoom", "slide-rise", "slide-tilt", "slide-pan", "slide-soft", "slide-reveal"];
+const municipalityStyles = ["slide-fade", "slide-zoom", "slide-lift", "slide-sweep", "slide-tilt", "slide-focus", "slide-curtain", "slide-drift"];
 
 if (municipalitySlider && municipalityImage && municipalityScreens.length > 1) {
   let municipalityIndex = 0;
+  const firstSlideDelay = 5000;
+  const nextSlideDelay = 4000;
+  const transitionDelay = 680;
 
-  municipalityStyles.forEach((style) => municipalitySlider.classList.remove(style));
-  municipalitySlider.classList.add(municipalityStyles[0]);
+  const setMunicipalityStyle = (index) => {
+    municipalityStyles.forEach((style) => municipalitySlider.classList.remove(style));
+    municipalitySlider.classList.add(municipalityStyles[index % municipalityStyles.length]);
+  };
 
-  setInterval(() => {
+  const renderMunicipalitySlide = (index) => {
+    const slide = municipalityScreens[index];
+    municipalityImage.src = slide.src;
+    municipalityImage.alt = `E-Governance Management System screenshot - ${slide.caption}`;
+    if (municipalityCaption) municipalityCaption.textContent = slide.caption;
+    if (municipalityCounter) {
+      municipalityCounter.textContent = `${String(index + 1).padStart(2, "0")} / ${municipalityScreens.length}`;
+    }
+  };
+
+  const preloadMunicipalitySlide = (index) => {
+    const image = new Image();
+    image.src = municipalityScreens[index].src;
+  };
+
+  const queueMunicipalitySlide = (delay) => {
+    window.setTimeout(() => {
+      advanceMunicipalitySlide();
+    }, delay);
+  };
+
+  const advanceMunicipalitySlide = () => {
     municipalityIndex = (municipalityIndex + 1) % municipalityScreens.length;
-    const next = municipalityScreens[municipalityIndex];
-    const nextStyle = municipalityStyles[municipalityIndex % municipalityStyles.length];
 
     municipalitySlider.classList.add("is-changing");
 
     window.setTimeout(() => {
-      municipalityStyles.forEach((style) => municipalitySlider.classList.remove(style));
-      municipalitySlider.classList.add(nextStyle);
-      municipalityImage.src = next.src;
-      municipalityImage.alt = `E-Governance Management System screenshot - ${next.caption}`;
-      if (municipalityCaption) municipalityCaption.textContent = next.caption;
-      if (municipalityCounter) {
-        municipalityCounter.textContent = `${String(municipalityIndex + 1).padStart(2, "0")} / ${municipalityScreens.length}`;
-      }
+      setMunicipalityStyle(municipalityIndex);
+      renderMunicipalitySlide(municipalityIndex);
+      preloadMunicipalitySlide((municipalityIndex + 1) % municipalityScreens.length);
       municipalitySlider.classList.remove("is-changing");
-    }, 520);
-  }, 3000);
+      queueMunicipalitySlide(nextSlideDelay);
+    }, transitionDelay);
+  };
+
+  setMunicipalityStyle(0);
+  renderMunicipalitySlide(0);
+  preloadMunicipalitySlide(1);
+  queueMunicipalitySlide(firstSlideDelay);
 }
