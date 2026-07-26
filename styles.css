@@ -683,6 +683,95 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.municipality-showcase {
+  perspective: 1600px;
+}
+
+.municipality-slider {
+  isolation: isolate;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(232, 247, 246, 0.78)),
+    #f7fbfc;
+}
+
+.municipality-slider::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 159, 147, 0.14);
+  pointer-events: none;
+}
+
+.municipality-slider::after {
+  content: "";
+  position: absolute;
+  inset: auto 24px 24px;
+  z-index: 0;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 159, 147, 0.18), transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.municipality-slider img {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: saturate(1.02) contrast(1.01);
+  transition:
+    opacity 520ms ease,
+    transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 760ms ease,
+    clip-path 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.municipality-slider figcaption {
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.municipality-slider .slide-counter {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 800;
+}
+
+.municipality-slider.is-changing img {
+  opacity: 0;
+}
+
+.municipality-slider.slide-zoom.is-changing img {
+  transform: scale(1.055);
+}
+
+.municipality-slider.slide-rise.is-changing img {
+  transform: translateY(24px) scale(0.985);
+}
+
+.municipality-slider.slide-tilt.is-changing img {
+  transform: rotateX(7deg) rotateY(-7deg) scale(0.98);
+}
+
+.municipality-slider.slide-pan.is-changing img {
+  transform: translateX(-28px) scale(1.015);
+}
+
+.municipality-slider.slide-soft.is-changing img {
+  filter: blur(10px) saturate(1.25);
+  transform: scale(1.025);
+}
+
+.municipality-slider.slide-reveal.is-changing img {
+  clip-path: inset(0 52% 0 0 round 14px);
+  transform: scale(1.02);
+}
+
 .repo-section,
 .education-section,
 .certification-section {

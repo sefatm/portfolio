@@ -143,3 +143,76 @@ if (animatedHeadline) {
     animatedHeadline.appendChild(span);
   });
 }
+
+const municipalityScreens = [
+  { src: "./assets/Municipality/Screenshot (729).png?v=20260726", caption: "Dashboard overview" },
+  { src: "./assets/Municipality/Screenshot (730).png?v=20260726", caption: "Citizen service module" },
+  { src: "./assets/Municipality/Screenshot (731).png?v=20260726", caption: "Application workflow" },
+  { src: "./assets/Municipality/Screenshot (732).png?v=20260726", caption: "Trade license service" },
+  { src: "./assets/Municipality/Screenshot (733).png?v=20260726", caption: "License approval panel" },
+  { src: "./assets/Municipality/Screenshot (734).png?v=20260726", caption: "Holding tax registration" },
+  { src: "./assets/Municipality/Screenshot (737).png?v=20260726", caption: "Tax assessment screen" },
+  { src: "./assets/Municipality/Screenshot (738).png?v=20260726", caption: "Payment workflow" },
+  { src: "./assets/Municipality/Screenshot (739).png?v=20260726", caption: "Complaint submission" },
+  { src: "./assets/Municipality/Screenshot (740).png?v=20260726", caption: "Complaint tracking" },
+  { src: "./assets/Municipality/Screenshot (741).png?v=20260726", caption: "Infrastructure requests" },
+  { src: "./assets/Municipality/Screenshot (743).png?v=20260726", caption: "Road and drainage module" },
+  { src: "./assets/Municipality/Screenshot (754).png?v=20260726", caption: "Health notice board" },
+  { src: "./assets/Municipality/Screenshot (755).png?v=20260726", caption: "EPI registration" },
+  { src: "./assets/Municipality/Screenshot (756).png?v=20260726", caption: "EPI administration" },
+  { src: "./assets/Municipality/Screenshot (757).png?v=20260726", caption: "Project management" },
+  { src: "./assets/Municipality/Screenshot (758).png?v=20260726", caption: "Project budget" },
+  { src: "./assets/Municipality/Screenshot (759).png?v=20260726", caption: "Water connection" },
+  { src: "./assets/Municipality/Screenshot (761).png?v=20260726", caption: "Water billing" },
+  { src: "./assets/Municipality/Screenshot (762).png?v=20260726", caption: "Waste schedule" },
+  { src: "./assets/Municipality/Screenshot (763).png?v=20260726", caption: "Pickup request" },
+  { src: "./assets/Municipality/Screenshot (764).png?v=20260726", caption: "Ward management" },
+  { src: "./assets/Municipality/Screenshot (765).png?v=20260726", caption: "GIS ward map" },
+  { src: "./assets/Municipality/Screenshot (766).png?v=20260726", caption: "Holding location map" },
+  { src: "./assets/Municipality/Screenshot (767).png?v=20260726", caption: "E-tender notices" },
+  { src: "./assets/Municipality/Screenshot (768).png?v=20260726", caption: "Tender bid workflow" },
+  { src: "./assets/Municipality/Screenshot (769).png?v=20260726", caption: "Tender admin panel" },
+  { src: "./assets/Municipality/Screenshot (770).png?v=20260726", caption: "E-voting management" },
+  { src: "./assets/Municipality/Screenshot (771).png?v=20260726", caption: "Voter registration" },
+  { src: "./assets/Municipality/Screenshot (772).png?v=20260726", caption: "Candidate approval" },
+  { src: "./assets/Municipality/Screenshot (774).png?v=20260726", caption: "Voting analytics" },
+  { src: "./assets/Municipality/Screenshot (775).png?v=20260726", caption: "Social card application" },
+  { src: "./assets/Municipality/Screenshot (776).png?v=20260726", caption: "Social card admin" },
+  { src: "./assets/Municipality/Screenshot (777).png?v=20260726", caption: "Notice management" },
+  { src: "./assets/Municipality/Screenshot (778).png?v=20260726", caption: "Notification center" },
+  { src: "./assets/Municipality/Screenshot (779).png?v=20260726", caption: "Reports and analytics" },
+  { src: "./assets/Municipality/Screenshot (780).png?v=20260726", caption: "System settings" }
+];
+
+const municipalitySlider = document.querySelector("[data-municipality-slider]");
+const municipalityImage = document.querySelector("[data-municipality-image]");
+const municipalityCaption = document.querySelector("[data-municipality-caption]");
+const municipalityCounter = document.querySelector("[data-municipality-counter]");
+const municipalityStyles = ["slide-zoom", "slide-rise", "slide-tilt", "slide-pan", "slide-soft", "slide-reveal"];
+
+if (municipalitySlider && municipalityImage && municipalityScreens.length > 1) {
+  let municipalityIndex = 0;
+
+  municipalityStyles.forEach((style) => municipalitySlider.classList.remove(style));
+  municipalitySlider.classList.add(municipalityStyles[0]);
+
+  setInterval(() => {
+    municipalityIndex = (municipalityIndex + 1) % municipalityScreens.length;
+    const next = municipalityScreens[municipalityIndex];
+    const nextStyle = municipalityStyles[municipalityIndex % municipalityStyles.length];
+
+    municipalitySlider.classList.add("is-changing");
+
+    window.setTimeout(() => {
+      municipalityStyles.forEach((style) => municipalitySlider.classList.remove(style));
+      municipalitySlider.classList.add(nextStyle);
+      municipalityImage.src = next.src;
+      municipalityImage.alt = `E-Governance Management System screenshot - ${next.caption}`;
+      if (municipalityCaption) municipalityCaption.textContent = next.caption;
+      if (municipalityCounter) {
+        municipalityCounter.textContent = `${String(municipalityIndex + 1).padStart(2, "0")} / ${municipalityScreens.length}`;
+      }
+      municipalitySlider.classList.remove("is-changing");
+    }, 520);
+  }, 3000);
+}
